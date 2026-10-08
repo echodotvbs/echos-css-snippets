@@ -1,0 +1,26 @@
+.container__60f82 > div:not(:has(.expirationCopy_b5b7aa)) {
+  display: none;
+}
+
+[class^="page"] > [class^="container"] > [class^="scroller"] > [class^="contentSection"] > [class^="content"] {
+  max-width: none;
+
+  > [class^="heroWrapper"] {
+    display: none;
+  }
+
+  > [class^="headingWrapper"] {
+    margin-top: 0;
+  }
+
+  > [class^="container"] {
+    max-width: none;
+
+    > [class] > [class^="container"] > [class^="container"] {
+      &:has(> [class^="heroAssetWrapper"]),
+      > [class^="rewardDescriptionContainer"] > [class^="textContainer"] > [class^="subtitleRow"] > [role="button"] {
+        display: none;
+      }
+    }
+  }
+}
