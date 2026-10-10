@@ -1,16 +1,16 @@
 :root {
-  --open: 0.18s;  /* how long the slide open takes */
-  --close: 0.18s; /* how long it takes to close again */
-  --ease: ease;
+  --threads-open-time: 0.18s;  /* how long the slide open takes */
+  --threads-close-time: 0.18s; /* how long it takes to close again */
+  --threads-ease: ease;
 }
-[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]) {
+[class*="containerDefault_"][data-dnd-name]:has(+ [class*="container_"] [class*="spineBorder_"], + [class*="container_"] li[class*="container_"]) + [class*="container_"] {
   interpolate-size: allow-keywords;
-  max-height: 0;
+  max-height: var(--threads-max, 0);
   overflow: hidden;
-  transition: max-height var(--close) var(--ease);
+  transition: max-height var(--threads-time, var(--threads-close-time)) var(--threads-ease);
 }
-[class*="containerDefault_"][data-dnd-name]:is(:hover, :focus-within) + [class*="container_"]:has([class*="spineBorder_"]),
-[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]):is(:hover, :focus-within) {
-  max-height: max-content;
-  transition: max-height var(--open) var(--ease);
+[class*="containerDefault_"][data-dnd-name]:is(:hover, :focus-within) + [class*="container_"],
+[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:is(:hover, :focus-within) {
+  --threads-max: max-content;
+  --threads-time: var(--threads-open-time);
 }
