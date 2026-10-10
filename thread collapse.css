@@ -1,0 +1,16 @@
+:root {
+  --open: 0.18s;  /* how long the slide open takes */
+  --close: 0.18s; /* how long it takes to close again */
+  --ease: ease;
+}
+[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]) {
+  interpolate-size: allow-keywords;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--close) var(--ease);
+}
+[class*="containerDefault_"][data-dnd-name]:is(:hover, :focus-within) + [class*="container_"]:has([class*="spineBorder_"]),
+[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]):is(:hover, :focus-within) {
+  max-height: max-content;
+  transition: max-height var(--open) var(--ease);
+}
