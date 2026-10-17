@@ -2,7 +2,6 @@
 
 /* CONFIGURATION SECTION */
 :root {
-  interpolate-size: allow-keywords;
   container-name: root;
 
   /* userbar popup*/
@@ -24,7 +23,7 @@
   --context-menu-border: none;
   --user-banner: off; /* on or off colored banner nitro users */
   --tint-profiles: on; /* on or off lighten/darken nitro profiles*/
-  --pop-up-color: rgb(0, 0, 0); /* uncomment to force one tint color for every popup */
+  --pop-up-color: rgb(0, 0, 0); /*force one tint color for every popup */
 
   /* colors */
   --folder-cover-color: #ffaac9; /* folder icon for blurred server folders*/
@@ -823,6 +822,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
     > .containerDefault__29444, /* category */
     > .containerDefault_c69b6d, /* channel */
     > .container__5b40b { /* thread */
+      width: 100%;
       width: stretch;
     }
   }
@@ -866,6 +866,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
 
   .text__10651 {
     .tagText__10651 {
+      interpolate-size: allow-keywords;
       display: inline-block;
       line-height: 100%;
       white-space: nowrap;
@@ -1661,6 +1662,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
 
 /* collapsible threads */
 [class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]) {
+  interpolate-size: allow-keywords;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.18s ease;
