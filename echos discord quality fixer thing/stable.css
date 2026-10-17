@@ -12,6 +12,7 @@
   --userbar-hide-delay: 0.155s; /* hiding delay */
   --userbar-hide-time: 0.145s; /* pop down speed */
   --userbar-show-time: 0.155s; /* pop up speed */
+  --userbar-list-gap: calc(var(--userbar-peek) - var(--userbar-edge) + 5.6px); /* dm list scroll reach during calls fix (dawn spotted it ty pookie)*/
 
   /* acrylic stuff */
   --blur-popup: 12px; /* popout modals menus */
@@ -108,6 +109,13 @@
 section[class*="panels_"] {
   transform: translateY(calc((100% + var(--userbar-edge) - var(--userbar-peek)) * var(--userbar-autohide)));
   transition: transform var(--userbar-hide-time) ease var(--userbar-hide-delay);
+}
+
+@container root style(--userbar-autohide: 1) {
+  .guilds__5e434,
+  .scroller__99e7c[data-list-id^="private-channels-uid_"] {
+    margin-bottom: var(--userbar-list-gap) !important;
+  }
 }
 
 /* userbar popup thingy */
@@ -1591,6 +1599,13 @@ form[class*="form"]:has([class*="channelTextArea"]),
 
 [class*="premiumIconWrapper_"] {
   display: none;
+}
+
+/* h. newer menus */
+.orbWalletContainer__81c60,
+.container__8a031[class*="size-"] {
+  background: color-mix(in srgb, var(--pop-up-color, var(--bg-overlay-3, var(--background-base-low, var(--background-secondary)))) calc(var(--opacity-popup) * 100%), transparent) !important;
+  backdrop-filter: blur(var(--blur-popup));
 }
 
 
