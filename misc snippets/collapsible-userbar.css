@@ -1,0 +1,28 @@
+/**
+ * @name Collapsible Userbar
+ * @description userbar at the bottom left slides down and only peeks out until you hover it
+ * IMPORTANT: --userbar-peek and --userbar-edge are tuned to my layout so adjust them until exactly the amount you want stays visible
+ * also set --userbar-autohide to 0 to turn it off
+ */
+
+:root {
+  --userbar-autohide: 1; /* 1-on 0-off*/
+  --userbar-peek: 132.40px; /* how much visible while hdiden */
+  --userbar-edge: 90px; /* gap btwn bar and the bottom of window so its exactly --userbar-peek */
+  --userbar-hide-delay: 0.155s; /* hiding delay */
+  --userbar-hide-time: 0.145s; /* pop down speed */
+  --userbar-show-time: 0.155s; /* pop up speed */
+}
+
+
+/*collapsible userbar */
+section[class*="panels_"] {
+  transform: translateY(calc((100% + var(--userbar-edge) - var(--userbar-peek)) * var(--userbar-autohide)));
+  transition: transform var(--userbar-hide-time) ease var(--userbar-hide-delay);
+}
+
+/* userbar popup thingy */
+section[class*="panels_"]:hover {
+  transform: translateY(0);
+  transition: transform var(--userbar-show-time) ease;
+}

@@ -1,0 +1,20 @@
+/**
+ * @name Collapsible Threads
+ * @description thread lists stay collapsed and slide open when you hover them
+ */
+
+:root {
+  interpolate-size: allow-keywords;
+}
+
+[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]) {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.18s ease;
+}
+
+[class*="containerDefault_"][data-dnd-name]:is(:hover, :focus-within) + [class*="container_"]:has([class*="spineBorder_"]),
+[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]):is(:hover, :focus-within) {
+  max-height: max-content;
+  transition: max-height 0.18s ease;
+}

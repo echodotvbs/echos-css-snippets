@@ -1,0 +1,33 @@
+/**
+ * @name Compact Search Bar
+ * @description channel search bar collapses to the icon and expands on click
+ */
+
+.search_c322aa > .searchBar_c322aa {
+  width: 32px !important;
+  background: none;
+  border-color: transparent;
+  transition:
+    background-color 0.25s ease,
+    width 0.25s ease,
+    border-color 0.25s ease;
+
+  [data-slate-editor="true"] {
+    padding-right: 0 !important;
+  }
+
+  .icon_c322aa {
+    margin-right: 7px;
+  }
+}
+
+.search_c322aa.open_c322aa > .searchBar_c322aa {
+  width: 244px !important;
+  background: var(--background-gradient-low, var(--input-background-default));
+  border-color: var(--input-border-default);
+}
+
+.search__49676 {
+  margin: 0 !important;
+  width: auto !important;
+}

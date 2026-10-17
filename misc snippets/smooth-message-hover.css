@@ -1,0 +1,47 @@
+/**
+ * @name Smooth Message Hover
+ * @description fading in/out messages hover highlight + right shift anim on hover
+ */
+
+:root {
+  --message-radius: 0;
+  --message-hover-shift: 5px; /* how much the message moves to the right when hovered (5 to 9 is good enough) */
+  --hover-highlight-strength: 55%; /* lower is fainter message hover highlights*/
+  --message-highlight-fade-in: 0.17s; /* how fast the message highlight fades in */
+  --message-highlight-fade-out: 0.17s; /* how fast the message highlight fades out */
+}
+
+
+/* hover highlight on reduced motion */
+.message__5126c,
+.searchResult__80bf8 {
+  transition: background-color var(--message-highlight-fade-out) ease;
+}
+
+.message__5126c:not(.selected__5126c):hover,
+.searchResult__80bf8:hover {
+  background-color: color-mix(in srgb, var(--background-surface-high) var(--hover-highlight-strength), transparent);
+  transition: background-color var(--message-highlight-fade-in) ease;
+}
+
+.message__5126c.selected__5126c:hover {
+  background-color: color-mix(in srgb, var(--background-surface-highest) var(--hover-highlight-strength), transparent) !important;
+  transition: background-color var(--message-highlight-fade-in) ease;
+}
+
+
+/* message hover animations */
+[class*="messageListItem_"] {
+  border-radius: var(--message-radius);
+  transition: transform 0.17s ease;
+
+  &:hover {
+    transform: translateX(var(--message-hover-shift));
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.divider__5126c {
+  z-index: 0;
+}

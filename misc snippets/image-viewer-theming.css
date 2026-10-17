@@ -1,0 +1,24 @@
+/**
+ * @name Image Viewer Theming
+ * @description lighter blurred backdrop behind the photo viewer +a soft back light so transparent images are readable
+ */
+
+:root {
+  --image-viewer-blur: 4px; /* how blurry the background behind the photo viewer gets */
+  --image-overlay-color: #ffffff31; /* brightens transparent images so its easeir to see*/
+  --image-overlay-radius: 6.5px; /* corner rounding of that overlay */
+}
+
+.scrim__40128 {
+  background-color: var(--background-scrim);
+  backdrop-filter: blur(var(--image-viewer-blur));
+}
+
+.carouselModal_d3a6f0.root__49fc1 {
+  backdrop-filter: none;
+}
+
+.imageWrapper.imageWrapper_af017a.media_a22bfd > .loadingOverlay_af017a {
+  background-color: var(--image-overlay-color);
+  border-radius: var(--image-overlay-radius);
+}

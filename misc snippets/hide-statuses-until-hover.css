@@ -1,0 +1,39 @@
+/**
+ * @name Hide Statuses Until Hover
+ * @description friends list and member list activity/status lines only show when you hover that row
+ */
+
+.peopleListItem_cc6179 {
+  .subtext__0a06e {
+    display: none;
+    margin: 5px;
+  }
+
+  &:is(:hover, :focus-within) .subtext__0a06e {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .userInfo__0a06e {
+    max-width: 90%;
+
+    .text__0a06e {
+      font-size: 105%;
+      flex-direction: row;
+      align-items: center;
+      padding: 5px;
+    }
+  }
+}
+
+.memberInner__5d473 {
+  .subText__91a9d {
+    display: none;
+  }
+
+  &:is(:hover, :focus-within) .subText__91a9d {
+    display: flex;
+  }
+}

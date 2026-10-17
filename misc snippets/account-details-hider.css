@@ -1,0 +1,32 @@
+/**
+ * @name Account Details Hider
+ * @description bro read title (though the hide and reveal buttons work on this one unlike every other snippet)
+ */
+
+:root {
+  container-name: root;
+
+  --account-hider: on; /* on or off the dots over email and phone number in settings */
+}
+
+@property --account-hider {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+
+[data-nav-anchor-key="account_info_email_setting"]:has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="text-md/medium"],
+[data-nav-anchor-key="account_info_phone_setting"]:has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="text-md/medium"] {
+  -webkit-text-security: disc;
+}
+
+@container root style(--account-hider: off) {
+  [data-nav-anchor-key="account_info_email_setting"]:has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="text-md/medium"],
+  [data-nav-anchor-key="account_info_phone_setting"]:has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="text-md/medium"],
+  :is(
+    [data-nav-anchor-key="account_info_email_setting"],
+    [data-nav-anchor-key="account_info_phone_setting"]
+  ) [class*="stack_"]:has(> button[data-mana-component="text-button"]) > div[class*="text-md/medium"] {
+    -webkit-text-security: none;
+  }
+}

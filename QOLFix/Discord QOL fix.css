@@ -3,6 +3,7 @@
   interpolate-size: allow-keywords;
   container-name: root;
 
+  /* userbar popup*/
   --userbar-autohide: 1; /* 1-on 0-off*/
   --userbar-peek: 132.40px; /* how much visible while hdiden */
   --userbar-edge: 90px; /* gap btwn bar and the bottom of window so its exactly --userbar-peek */
@@ -11,30 +12,47 @@
   --userbar-show-time: 0.155s; /* pop up speed */
 
   /* acrylic stuff */
-  --blur-popup: 20px; /* popout modals menus */
-  --blur-bar: 20px; /* always visible bars */
+  --blur-popup: 12px; /* popout modals menus */
+  --blur-bar: 8px; /* always visible bars */
   --opacity-popup: 0.3;
   --opacity-popup-inner: 0.25;
   --radius-popup: 10px;
   --radius-context: 8px;
-  --context-menu-border: none;        
+  --context-menu-border: none;
   --user-banner: off; /* on or off colored banner nitro users */
   --tint-profiles: on; /* on or off lighten/darken nitro profiles*/
-  /* --pop-up-color: black; */ /* uncomment to force one tint color for every popup */
+  --pop-up-color: rgb(0, 0, 0); /* uncomment to force one tint color for every popup */
 
   /* colors */
-  --folder-cover-color: #815364; /* folder icon for blurred server folders*/
-  --accent: #815364; /* custom text selection and scrollbar color*/
+  --folder-cover-color: #ffaac9; /* folder icon for blurred server folders*/
+  --accent: #9a6377; /* custom text selection and scrollbar color*/
   --offline-toast-idle: white;
   --offline-toast-alert: #df3d40;
   --dm-btn-idle: rgb(54 16 29 / 0.349); /* dm button idle color */
-  --dm-btn-hover: rgb(110 59 76); /* dm button hover color */
+  --dm-btn-hover: rgb(117, 68, 84); /* dm button hover color */
 
   /* misc */
   --spoiler-blur-hover: 8px; /* how much the spoiler effect lightens on hover */
-  --message-radius: 0;                
+  --message-radius: 0;
   --message-hover-shift: 5px; /* how much the message moves to the right when hovered (5 to 9 is good enough) */
-  --hover-highlight-strength: 23%; /* lower is fainter message hover highlights*/
+  --hover-highlight-strength: 55%; /* lower is fainter message hover highlights*/
+
+  /* image viewer */
+  --image-viewer-blur: 4px; /* how blurry the background behind the photo viewer gets */
+  --image-overlay-color: #ffffff31; /* brightens transparent images so its easeir to see*/
+  --image-overlay-radius: 6.5px; /* corner rounding of that overlay */
+
+  /* highlight fades */
+  --server-highlight-fade-in: 0.25s; /* how fast server and folder icons brighten when hovered */
+  --server-highlight-fade-out: 0.25s; /* how fast they dim back down after */
+  --server-highlight-dim: brightness(40%) saturate(65%); /* look of unhovered server and folder icons */
+  --message-highlight-fade-in: 0.17s; /* how fast the message highlight fades in */
+  --message-highlight-fade-out: 0.17s; /* how fast the message highlight fades out */
+
+  /* compact sidebar tabs */
+  --dms-tabs: on; /* on or off icon only dm tabs*/
+  --server-tabs: on; /* on or off icon only server tab*/
+  --tab-badge-scale: 0.7; /* size of the badges on compact */
 
   /* account hider things toggle */
   --account-hider: on; /* on or off the dots over email and phone number in settings */
@@ -47,7 +65,7 @@
   --menu-spacing: 4px;
 
   --glass-bg-color: rgba(50, 29, 35, 0.904);
-  --glass-blur: 20px; /* the menus own acrylic intensity (9 to 12 is good enough)*/
+  --glass-blur: 10px; /* the menus own acrylic intensity (9 to 12 is good enough)*/
   --glass-saturation: 160%;
   --glass-border: 1px solid rgba(62, 20, 35, 0.1);
   --glass-shadow:
@@ -76,7 +94,7 @@
   --scrollbar-padding: 0 6px;
 }
 
-/* thats all the configs. the rest is the actuall css (tho you can go edit custom typing statuses at line 613, 617, 621 and 631) */
+/* thats all the configs. the rest is the actuall css */
 
 
 /* cleanup titlebar */
@@ -89,8 +107,8 @@ section[class*="panels_"] {
   transform: translateY(calc((100% + var(--userbar-edge) - var(--userbar-peek)) * var(--userbar-autohide)));
   transition: transform var(--userbar-hide-time) ease var(--userbar-hide-delay);
 }
- 
-/* hovering the strip (or the bar itself) brings it straight back up */
+
+/* userbar popup thingy */
 section[class*="panels_"]:hover {
   transform: translateY(0);
   transition: transform var(--userbar-show-time) ease;
@@ -153,15 +171,22 @@ section[class*="panels_"]:hover {
 
 
 /* hover highlight on reduced motion */
+.message__5126c,
+.searchResult__80bf8 {
+  transition: background-color var(--message-highlight-fade-out) ease;
+}
+
 .message__5126c:not(.selected__5126c):hover,
-.searchResult__80bf8:hover,
-[class*="messageGroupWrapper_"]:hover {
+.searchResult__80bf8:hover {
   background-color: color-mix(in srgb, var(--background-surface-high) var(--hover-highlight-strength), transparent);
+  transition: background-color var(--message-highlight-fade-in) ease;
 }
 
 .message__5126c.selected__5126c:hover {
   background-color: color-mix(in srgb, var(--background-surface-highest) var(--hover-highlight-strength), transparent) !important;
+  transition: background-color var(--message-highlight-fade-in) ease;
 }
+
 
 
 /* role colored highlights */
@@ -424,6 +449,21 @@ section[class*="panels_"]:hover {
   }
 }
 
+/* image viewer cleanup*/
+.scrim__40128 {
+  background-color: var(--background-scrim);
+  backdrop-filter: blur(var(--image-viewer-blur));
+}
+
+.carouselModal_d3a6f0.root__49fc1 {
+  backdrop-filter: none;
+}
+
+.imageWrapper.imageWrapper_af017a.media_a22bfd > .loadingOverlay_af017a {
+  background-color: var(--image-overlay-color);
+  border-radius: var(--image-overlay-radius);
+}
+
 
 /* colorde embeds */
 .embedFull__623de {
@@ -490,9 +530,14 @@ form[class*="form"]:has([class*="channelTextArea"]),
 
   &:hover {
     transform: translateX(var(--message-hover-shift));
+    position: relative;
+    z-index: 2;
   }
 }
 
+.divider__5126c {
+  z-index: 0;
+}
 
 /* dm button backgrounds */
 .actionButton_f8fa06 {
@@ -506,6 +551,270 @@ form[class*="form"]:has([class*="channelTextArea"]),
   &:hover {
     background-color: var(--dm-btn-hover) !important;
     opacity: 0.7 !important;
+  }
+}
+
+
+/* compact dm tabs */
+@property --dms-tabs {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+
+@container root style(--dms-tabs: on) {
+  .scroller__99e7c[data-list-id^="private-channels-uid_"] {
+    > .content_d125d2 {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      justify-content: space-evenly;
+
+      > div:not([class]):first-child,
+      > div[role="button"],
+      > .privateChannelsHeaderContainer__99e7c,
+      > .channel__972a0.dm__972a0 {
+        width: 100%;
+        min-width: 0;
+      }
+
+      > .friendsButtonContainer_e6b769,
+      > div:nth-of-type(3),
+      > .channel__972a0:not(.dm__972a0),
+      > .wrapper__553bf {
+        margin: 0;
+      }
+
+      .channel__972a0:not(.dm__972a0) {
+        margin: 0 4px !important;
+
+        > .linkButton__972a0 > .link__972a0 {
+          padding: 6px;
+          justify-content: center;
+
+          > .avatarWithText__972a0 {
+            padding: 0;
+
+            > .avatar__20a53 {
+              margin: 0;
+            }
+
+            > .content__20a53 {
+              display: none;
+            }
+          }
+
+          /* message requests*/
+          > .numberBadge__463b7 {
+            position: absolute;
+            left: 17.5px;
+            bottom: 0;
+            transform: scale(var(--tab-badge-scale));
+          }
+
+          /* nitro */
+          > .premiumBadge__6d7da {
+            position: absolute;
+            bottom: 0;
+            transform: scale(var(--tab-badge-scale));
+            background-color: var(--badge-notification-background);
+
+            > .BadgeClockIcon__6d7da {
+              display: none;
+            }
+
+            > .eyebrow_cf4812 {
+              color: var(--white) !important;
+            }
+          }
+
+          > .countDown__61bcd {
+            position: absolute;
+            bottom: -1px;
+            transform: scale(var(--tab-badge-scale));
+
+            > .premiumPill__9f7e5 {
+              background-color: var(--badge-notification-background);
+            }
+
+            > .eyebrow_cf4812 {
+              background-color: var(--badge-notification-background);
+              color: var(--white);
+            }
+          }
+
+          > .eyebrow_cf4812 {
+            position: absolute;
+            transform: scale(var(--tab-badge-scale));
+            bottom: 0;
+            background-color: var(--badge-notification-background);
+            color: var(--white);
+          }
+
+          /* shop*/
+          > .newBadge__4ed1a {
+            position: absolute;
+            bottom: 0;
+            transform: scale(var(--tab-badge-scale));
+
+            > .eyebrow_cf4812 {
+              background-color: var(--badge-notification-background);
+              color: var(--white);
+
+              > svg {
+                display: none;
+              }
+            }
+          }
+
+          /* quests*/
+          > .badge__553bf {
+            position: absolute;
+            bottom: 0;
+            transform: scale(var(--tab-badge-scale));
+
+            > .eyebrow_cf4812 {
+              background-color: var(--badge-notification-background);
+              color: var(--white);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* compact server tabs */
+@property --server-tabs {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+
+@container root style(--server-tabs: on) {
+  .scroller__629e4 > .content_d125d2,
+  [data-list-id="channels"] > .content_d125d2,
+  .content_d125d2[data-list-id="channels"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+
+    > div[style="height: 84px;"]:not([class]), /* banner*/
+    > div[style="height: 0px;"]:not([class]) { /* no banner*/
+      width: 100%;
+
+      + div[style="height: 8px;"]:not([class]), /* compact */
+      + div[style="height: 12px;"]:not([class]) { /* default/spacious */
+        width: 100%;
+
+        + .container__0d0f9 { /* boost bar */
+          width: 100%;
+        }
+
+        ~ [class*="sectionDivider_"] {
+          + div[style="height: 8px;"]:not([class]), /* compact */
+          + div[style="height: 12px;"]:not([class]) { /* default/spacious*/
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    /* get started*/
+    > li:not([class]):has(> .progressBarContainer_baf530) {
+      width: 100%;
+
+      > .progressBarContainer_baf530 {
+        width: 100%;
+        margin: 0 5px;
+        max-width: calc(240px - 25px);
+      }
+
+      > .divider_baf530 {
+        width: 100%;
+        margin: 15px 15px 3px;
+        max-width: calc(240px - 25px);
+      }
+    }
+
+    > li:not([class]) {
+      width: fit-content;
+
+      > .wrapper__2ea32 {
+        margin: 0;
+
+        > .unread__2ea32 {
+          display: none;
+        }
+
+        > .basicChannelRowLink__2ea32 {
+          padding: 5px;
+
+          > .name__2ea32 {
+            display: none;
+          }
+
+          > .numberBadge__2ea32 {
+            position: absolute;
+            left: 17.5px;
+            bottom: 0;
+            transform: scale(var(--tab-badge-scale));
+            background-color: var(--status-danger);
+          }
+
+          > .textBadge__463b7 {
+            position: absolute;
+            bottom: 0;
+            transform: scale(var(--tab-badge-scale));
+          }
+        }
+      }
+    }
+
+    > div:not([class]) {
+      > li:not([class]) > .wrapper__2ea32 {
+        margin: 0;
+
+        > .basicChannelRowLink__2ea32 {
+          padding: 5px;
+
+          > .name__2ea32 {
+            display: none;
+          }
+        }
+      }
+    }
+
+    /* game shop */
+    > .wrapper_fce7ca {
+      > li > .wrapper__2ea32 {
+        margin: 0;
+
+        > .basicChannelRowLink__2ea32 {
+          padding: 5px;
+
+          > .name__2ea32 {
+            display: none;
+          }
+
+          > .textBadge__463b7 {
+            position: absolute;
+            bottom: 0;
+            transform: scale(var(--tab-badge-scale));
+          }
+        }
+      }
+    }
+
+    > .containerDefault__29444, /* category */
+    > .containerDefault_c69b6d, /* channel */
+    > .container__5b40b { /* thread */
+      width: stretch;
+    }
   }
 }
 
@@ -651,8 +960,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
 }
 
 
-/* blur server folders until hover
-   (color: --folder-cover-color in the config block) */
+/* blur server folders and dim servers until hover*/
 .folderPreview__48112::after {
   content: "";
   background-color: var(--folder-cover-color);
@@ -681,6 +989,51 @@ form[class*="form"]:has([class*="channelTextArea"]),
   &:hover > .folderPreviewGuildIcon__48112 {
     opacity: 1;
     filter: blur(0);
+  }
+}
+
+[class*="wrapper__"][class*="overlay__"] {
+  display: none !important;
+}
+
+[aria-label="Servers"] {
+  [data-list-item-id^="guildsnav"] {
+    transition: filter var(--server-highlight-fade-out) ease;
+
+    &[aria-selected="false"] {
+      filter: var(--server-highlight-dim);
+
+      &:hover {
+        filter: none;
+        transition: filter var(--server-highlight-fade-in) ease;
+      }
+    }
+
+    &[aria-selected="true"] {
+      filter: none;
+    }
+  }
+}
+
+.folderButton__48112 {
+  .folderButtonInner__48112 {
+    transition: filter var(--server-highlight-fade-out) ease;
+  }
+
+  &[aria-expanded="false"] .folderButtonInner__48112 {
+    filter: var(--server-highlight-dim);
+
+    &:hover {
+      filter: none;
+      transition: filter var(--server-highlight-fade-in) ease;
+    }
+  }
+}
+
+.listItem__650eb:has(.selected__58105),
+.folderButton__48112[aria-expanded="true"] {
+  .folderButtonInner__48112 {
+    filter: none;
   }
 }
 
@@ -1351,12 +1704,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
 
 @container root style(--account-hider: off) {
   [data-nav-anchor-key="account_info_email_setting"]:has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="text-md/medium"],
-  [data-nav-anchor-key="account_info_phone_setting"]:has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="text-md/medium"] {
-    -webkit-text-security: none;
-  }
-}
-
-@container root style(--account-hider: off) {
+  [data-nav-anchor-key="account_info_phone_setting"]:has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="text-md/medium"],
   :is(
     [data-nav-anchor-key="account_info_email_setting"],
     [data-nav-anchor-key="account_info_phone_setting"]
@@ -1367,12 +1715,34 @@ form[class*="form"]:has([class*="channelTextArea"]),
 
 /* captcha anti flashbang*/
 .captchaContainer_deee3a iframe {
-    filter: 
-        invert(1) 
-        hue-rotate(180deg) 
+    filter:
+        invert(1)
+        hue-rotate(180deg)
         brightness(1.3)
-        hue-rotate(230deg) 
+        hue-rotate(230deg)
         saturate(1.4)
         contrast(1.1) !important;
     border-radius: 10px;
+}
+
+/* prettier expanded edits timestamp */
+.messageContent_c19a55 > .timestamp_c19a55 {
+  > span > time > .edited_c19a55 {
+    width: 26ch;
+    opacity: 0;
+    position: absolute;
+    align-self: center;
+  }
+
+  > .hiddenVisually_b18fe2 {
+    clip-path: unset;
+    width: max-content;
+    height: unset;
+    margin-top: 1px;
+    position: unset;
+
+    &::before {
+      content: "✎ edited ";
+    }
+  }
 }

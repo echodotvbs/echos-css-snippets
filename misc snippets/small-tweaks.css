@@ -1,0 +1,45 @@
+/**
+ * @name Small Tweaks
+ * @description three misc things- hide the "active now" column + a dark captcha + and custom color text selection and scrollbar
+ */
+
+:root {
+  --accent: #9a6377; /* custom text selection and scrollbar color*/
+}
+
+
+/* kil the active now box */
+.nowPlayingColumn__133bf {
+  display: none;
+}
+
+
+/* cleaner scrollbar */
+::-webkit-scrollbar-track {
+  visibility: hidden;
+  background: transparent;
+}
+
+
+/* custom text selection color and scroll bar
+  change color with --accent */
+::selection {
+  background: color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--accent) 55%, transparent) !important;
+}
+
+
+/* captcha anti flashbang*/
+.captchaContainer_deee3a iframe {
+    filter:
+        invert(1)
+        hue-rotate(180deg)
+        brightness(1.3)
+        hue-rotate(230deg)
+        saturate(1.4)
+        contrast(1.1) !important;
+    border-radius: 10px;
+}

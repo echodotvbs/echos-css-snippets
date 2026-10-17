@@ -1,0 +1,104 @@
+/**
+ * @name Compact Glass Autocomplete
+ * @description compact + blurred autocomplete and command palette with rounding stuff
+ */
+
+:root {
+  --menu-max-height: 400px; /* the menus height*/
+  --menu-max-width: 450px; /* the menus width*/
+  --menu-border-radius: 6px; /* menu ui corner rounding */
+  --menu-padding: 4px;
+  --menu-spacing: 4px;
+  --glass-bg-color: rgba(50, 29, 35, 0.904);
+  --glass-blur: 10px; /* the menus own acrylic intensity (9 to 12 is good enough)*/
+  --glass-saturation: 160%;
+  --glass-border: 1px solid rgba(62, 20, 35, 0.1);
+  --glass-shadow: 
+    0 8px 32px rgb(0 0 0 / 0.3),
+    0 0 0 1px rgb(255 255 255 / 0.05);
+  --item-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --item-bg: rgb(255 255 255 / 0.03);
+  --item-border-radius: 4px;
+  --item-transition: 
+    background-color 0.2s var(--item-ease),
+    border-color 0.2s var(--item-ease),
+    transform 0.2s var(--item-ease),
+    box-shadow 0.2s var(--item-ease);
+  --hover-bg: rgb(100 100 100 / 0.25);
+  --hover-border-color: rgb(150 150 150 / 0.3);
+  --hover-shadow: 0 2px 8px rgb(50 50 50 / 0.15);
+  --hover-transform: translateX(2px);
+  --selected-bg: rgb(80 80 80 / 0.3);
+  --selected-border-color: rgb(100 100 100 / 0.8);
+  --selected-shadow: inset 0 0 10px rgb(50 50 50 / 0.2);
+  --category-bg-color: transparent;
+  --scrollbar-padding: 0 6px;
+}
+
+
+/* compact autocomplete */
+.autocompleteInner__13533.autocompleteInner__6b0e0,
+.autocomplete__13533.outerWrapper_d1405b {
+  max-height: var(--menu-max-height) !important;
+  max-width: var(--menu-max-width) !important;
+  border-radius: var(--menu-border-radius) !important;
+  padding: var(--menu-padding) !important;
+  background: var(--glass-bg-color) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation)) !important;
+  border: var(--glass-border) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+.autocomplete__13533.autocomplete__6b0e0.autocompleteAttached__6b0e0 {
+  max-height: var(--menu-max-height) !important;
+  max-width: var(--menu-max-width) !important;
+}
+
+.autocompleteRowVertical__13533 {
+  margin: var(--menu-spacing) 0 !important;
+  background: var(--item-bg) !important;
+  border: 1px solid transparent !important;
+  border-left-width: 3px !important;
+  border-radius: var(--item-border-radius) !important;
+  transition: var(--item-transition) !important;
+
+  &:hover {
+    background: var(--hover-bg) !important;
+    border-color: var(--hover-border-color) !important;
+    transform: var(--hover-transform) !important;
+    box-shadow: var(--hover-shadow) !important;
+  }
+
+  &[aria-selected="true"] {
+    background: var(--selected-bg) !important;
+    border-left-color: var(--selected-border-color) !important;
+    box-shadow: var(--selected-shadow) !important;
+  }
+}
+
+.wrapper__14245.categoryHeader_d1405b {
+  background: var(--category-bg-color) !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-top: -6px;
+}
+
+.header__14245 {
+  background: var(--category-bg-color) !important;
+}
+
+.scroller_affa7e .listItems_affa7e {
+  padding: 0 4px;
+}
+
+.scroller_affa7e.list_d1405b {
+  padding: var(--scrollbar-padding) !important;
+}
+
+.autocompleteRow__13533:hover .base__13533 {
+  background-color: transparent !important;
+}
+
+.autocompleteRowContentSecondary__13533 {
+  margin-right: 10px;
+}
