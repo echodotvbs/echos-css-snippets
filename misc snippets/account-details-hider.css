@@ -1,12 +1,10 @@
-/**
- * @name Account Details Hider
- * @description bro read title (though the hide and reveal buttons work on this one unlike every other snippet)
- */
+/*Account Details Hider
+bro read title (though the hide and reveal buttons work on this one unlike every other snippet)*/
 
 :root {
   container-name: root;
 
-  --account-hider: on; /* on or off the dots over email and phone number in settings */
+  --account-hider: on; /* on or off ts*/
 }
 
 @property --account-hider {

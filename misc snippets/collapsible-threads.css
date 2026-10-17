@@ -1,7 +1,5 @@
-/**
- * @name Collapsible Threads
- * @description thread lists stay collapsed and slide open when you hover them
- */
+/*Collapsible Threads
+thread lists stay collapsed and slide open when you hover them*/
 
 :root {
   interpolate-size: allow-keywords;

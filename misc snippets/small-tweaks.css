@@ -1,7 +1,5 @@
-/**
- * @name Small Tweaks
- * @description three misc things- hide the "active now" column + a dark captcha + and custom color text selection and scrollbar
- */
+/*Small Tweaks
+misc things- hide the "active now" column + a dark captcha +  custom color text selection and scrollbar*/
 
 :root {
   --accent: #9a6377; /* custom text selection and scrollbar color*/

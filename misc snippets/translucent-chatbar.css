@@ -1,0 +1,32 @@
+/*Translucent Chatbar
+ half transparent chatbox so your background kinda shows through*/
+
+:is(div[class*="channelTextArea"], div[class*="textArea"]):not([class*="popout"], [class*="modal"]),
+form[class*="form"]:has([class*="channelTextArea"]),
+[class*="channelTextArea"] :is(
+  [class*="attachButton"],
+  [class*="emojiButton"],
+  [class*="scrollableContainer"],
+  [class*="innerContainer"]
+) {
+  background: transparent !important;
+}
+
+[class*="channelTextArea"] {
+  [class*="textArea"] {
+    color: var(--text-default, var(--text-normal)) !important;
+  }
+
+  [class*="placeholder_"] {
+    color: var(--text-muted) !important;
+  }
+
+  :is(button[class*="attachButton"], button[class*="emojiButton"]):hover {
+    background-color: var(--background-mod-subtle, var(--background-modifier-hover)) !important;
+  }
+}
+
+.chatGradient__36d07,
+.chatGradientBase__36d07 {
+  display: none !important;
+}

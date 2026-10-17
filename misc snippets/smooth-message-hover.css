@@ -1,7 +1,5 @@
-/**
- * @name Smooth Message Hover
- * @description fading in/out messages hover highlight + right shift anim on hover
- */
+/*Smooth Message Hover
+fading in/out messages hover highlight + right shift anim on hover*/
 
 :root {
   --message-radius: 0;

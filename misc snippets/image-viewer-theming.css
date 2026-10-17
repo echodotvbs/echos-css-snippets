@@ -1,7 +1,5 @@
-/**
- * @name Image Viewer Theming
- * @description lighter blurred backdrop behind the photo viewer +a soft back light so transparent images are readable
- */
+/*Image Viewer Theming
+lighter blurred backdrop behind the photo viewer +a soft back light for transparnet images*/
 
 :root {
   --image-viewer-blur: 4px; /* how blurry the background behind the photo viewer gets */

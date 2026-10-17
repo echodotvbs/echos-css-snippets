@@ -1,7 +1,5 @@
-/**
- * @name Dashless Channel Names
- * @description channel names show spaces instead of dashes using base64 embedded font
- */
+/*Dashless Channel Names
+channel names show spaces instead of dashes using base64 embedded font*/
 
 @font-face {
     font-family: "Dashless";

@@ -1,7 +1,5 @@
-/**
- * @name Compact Search Bar
- * @description channel search bar collapses to the icon and expands on click
- */
+/*Compact Search Bar
+channel search bar collapses to the icon and expands on click*/
 
 .search_c322aa > .searchBar_c322aa {
   width: 32px !important;

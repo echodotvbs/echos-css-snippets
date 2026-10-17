@@ -1,7 +1,5 @@
-/**
- * @name Quest Page Cleanup
- * @description declutter the quest page and make it look more nice
- */
+/*Quest Page Cleanup
+declutter the quest page and make it look more nice*/
 
 .container__60f82 > div:not(:has(.expirationCopy_b5b7aa)) {
   display: none;

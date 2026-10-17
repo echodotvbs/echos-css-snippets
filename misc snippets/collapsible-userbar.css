@@ -1,9 +1,7 @@
-/**
- * @name Collapsible Userbar
- * @description userbar at the bottom left slides down and only peeks out until you hover it
- * IMPORTANT: --userbar-peek and --userbar-edge are tuned to my layout so adjust them until exactly the amount you want stays visible
- * also set --userbar-autohide to 0 to turn it off
- */
+/*Collapsible Userbar
+userbar at the bottom left slides down and only peeks out until you hover it
+IMPORTANT: --userbar-peek and --userbar-edge are tuned to my layout so adjust them until exactly the amount you want stays visible
+also set --userbar-autohide to 0 to turn it off*/
 
 :root {
   --userbar-autohide: 1; /* 1-on 0-off*/

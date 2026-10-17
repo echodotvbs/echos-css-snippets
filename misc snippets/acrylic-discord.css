@@ -1,7 +1,5 @@
-/**
- * @name Acrylic Discord
- * @description blurred, translucent popouts, menus, modals, profiles and bars. all strength, radius and tint is a variable
- */
+/*Acrylic Discord
+blurred, translucent popouts, menus, modals, profiles and bars. all strength radius and tint is editable*/
 
 :root {
   container-name: root;

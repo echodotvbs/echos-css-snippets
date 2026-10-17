@@ -1,12 +1,10 @@
-/**
- * @name Custom Typing Status
- * @description replace "is typing..." status with anything (go insane)
- */
+/*Custom Typing Status
+replace "is typing..." status with anything (go insane)*/
 
 :root {
-  --typing-one: " is typing..."; /* one person, name goes in front */
-  --typing-many: " are typing..."; /* several named people */
-  --typing-several: "Several people are typing..."; /* when discord just says several people */
+  --typing-one: " is typing..."; /* one person*/
+  --typing-many: " are typing..."; /* two people */
+  --typing-several: "Several people are typing..."; /*several people */
 }
 
 .chat_f75fb0 .typingDots_b88801 > .ellipsis_b88801 + .text_b88801 {

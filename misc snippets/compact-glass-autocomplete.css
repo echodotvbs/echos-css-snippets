@@ -1,7 +1,5 @@
-/**
- * @name Compact Glass Autocomplete
- * @description compact + blurred autocomplete and command palette with rounding stuff
- */
+/*Compact Glass Autocomplete
+compact + blurred autocomplete and command palette with rounding stuff*/
 
 :root {
   --menu-max-height: 400px; /* the menus height*/
@@ -36,7 +34,7 @@
 }
 
 
-/* compact autocomplete */
+/* actual thingamajib  */
 .autocompleteInner__13533.autocompleteInner__6b0e0,
 .autocomplete__13533.outerWrapper_d1405b {
   max-height: var(--menu-max-height) !important;
