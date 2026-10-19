@@ -37,6 +37,19 @@
   --message-hover-shift: 5px;
   --hover-highlight-strength: 55%;
 
+  /*channel list highlight*/
+  --chs-color-1: hsla(336, 83%, 71%, 0.38);
+  --chs-color-2: hsla(343, 67%, 30%, 0.387);
+  --chs-channel-selected: linear-gradient(40deg, var(--chs-color-1) 30%, var(--chs-color-2));
+  --chs-selected-radius: 8px;
+  --chs-selected-offset: 5px;
+  --chs-icon-hover: rgba(254, 117, 165, 0.675);
+  --chs-icon-scale: 0.9;
+  --chs-channel-spacing: 1px;
+  --chs-channel-size: 1px;
+  --chs-category-pad: 8px;
+  --chs-collapsed-opacity: 0.5;
+
   /* highlight fades*/
   --server-highlight-fade-in: 0.25s;
   --server-highlight-fade-out: 0.25s;
@@ -158,17 +171,17 @@
   --tag-hover-delay: 0.08s;
   --tag-overlay-bg: rgb(0, 0, 0);
   --tag-overlay-pad: 3px 8px;
-  --tag-overlay-radius: 6px;
+  --tag-overlay-radius: 4.5px;
   --tag-max-width: 4em;
  
   /*typing status*/
   --typing-size: 12px;
   --typing-height: 16px;
-  --typing-one: " is getting brutally corrected 😭😭💢...";
-  --typing-many: " are getting brutally corrected 😭😭💢...";
+  --typing-one: " is an idiot.";
+  --typing-many: " are idiots.";
   --typing-and: " and ";
   --typing-comma: ", ";
-  --typing-several: "Several bratty kids are getting brutally corrected 😭😭💢...";
+  --typing-several: "Several people are idiots.";
  
   /*server folders*/
   --folder-fade: 0.25s;
@@ -216,7 +229,7 @@
   --edited-label: "✎ edited ";
   --edited-width: 26ch;
 }
-
+/* end of config*/
 
 /*titlebar*/
 :is([class^="title_"], [class*=" title_"]) > :is([class^="title_"], [class*=" title_"]) {
@@ -849,6 +862,40 @@ form[class*="form"]:has([class*="channelTextArea"]),
       width: stretch;
     }
   }
+}
+
+/*channel list highlight */
+.containerDefault_c69b6d.selected_c69b6d .link__2ea32 {
+  background: var(--chs-channel-selected);
+  border-radius: var(--chs-selected-radius);
+  margin-left: var(--chs-selected-offset);
+}
+
+.modeUnreadImportant__2ea32 .icon__2ea32,
+.containerDefault_c69b6d.selected_c69b6d .icon__2ea32,
+.containerDefault_c69b6d:hover .icon__2ea32 {
+  color: var(--chs-icon-hover) !important;
+}
+
+.wrapper__2ea32 {
+  padding-block: var(--chs-channel-spacing);
+}
+
+.link__2ea32,
+#channels > ul > li.container__5b40b > ul > li > div > div {
+  padding-block: var(--chs-channel-size);
+}
+
+.iconContainer__2ea32 > svg[role="img"] {
+  scale: var(--chs-icon-scale);
+}
+
+.wrapper__29444 {
+  padding-left: var(--chs-category-pad) !important;
+}
+
+.mainContent__29444[aria-expanded="false"] {
+  opacity: var(--chs-collapsed-opacity) !important;
 }
  
 /*swap server and role icon*/
