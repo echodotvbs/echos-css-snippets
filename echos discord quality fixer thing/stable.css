@@ -171,7 +171,7 @@
   --tag-hover-delay: 0.08s;
   --tag-overlay-bg: rgb(0, 0, 0);
   --tag-overlay-pad: 3px 8px;
-  --tag-overlay-radius: 4.5px;
+  --tag-overlay-radius: 6px;
   --tag-max-width: 4em;
  
   /*typing status*/
@@ -1025,36 +1025,26 @@ form[class*="form"]:has([class*="channelTextArea"]),
   font-family: "Dashless", var(--font-primary);
 }
  
-/*typing status*/
-.chat_f75fb0 .typingDots_b88801 > .ellipsis_b88801 + .text_b88801 {
+/*typing status 
+(thank you big mally for the fix (he knows batchscript and is very opsec demon)*/
+[class*="typing_"] [class*="typingDots_"] > [class*="dots_"] + [class*="text_"] {
   font-size: 0;
   height: var(--typing-height);
- 
+
   > strong {
     font-size: var(--typing-size);
- 
+
     &::after {
       color: var(--text-subtle);
       font-weight: 500;
     }
- 
-    &:last-child::after {
-      content: var(--typing-one);
-    }
- 
-    &:last-child:not(:first-child)::after {
-      content: var(--typing-many);
-    }
- 
-    &:nth-last-child(2)::after {
-      content: var(--typing-and);
-    }
- 
-    &:nth-last-child(3)::after {
-      content: var(--typing-comma);
-    }
+
+    &:last-child::after { content: var(--typing-one); }
+    &:last-child:not(:first-child)::after { content: var(--typing-many); }
+    &:nth-last-child(2)::after { content: var(--typing-and); }
+    &:nth-last-child(3)::after { content: var(--typing-comma); }
   }
- 
+
   &:not(:has(> strong))::after {
     font-size: var(--typing-size);
     content: var(--typing-several);
