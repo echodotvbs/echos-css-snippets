@@ -12,7 +12,7 @@
   --userbar-list-gap: calc(var(--userbar-peek) - var(--userbar-edge) + 5.6px);
 
   /*acrylic*/
-  --blur-popup: 12px;
+  --blur-popup: 8px;
   --blur-bar: 8px;
   --opacity-popup: 0.3;
   --opacity-popup-inner: 0.25;
@@ -101,8 +101,6 @@
   --scrollbar-padding: 0 6px;
 
   --glass-bg-color: rgb(50 29 35 / 0.904);
-  --glass-blur: 10px;
-  --glass-saturation: 100%;
   --glass-border: 1px solid rgb(62 20 35 / 0.1);
   --glass-shadow: 0 8px 32px rgb(0 0 0 / 0.3), 0 0 0 1px rgb(255 255 255 / 0.05);
 
@@ -177,11 +175,11 @@
   /*typing status*/
   --typing-size: 12px;
   --typing-height: 16px;
-  --typing-one: " is an idiot.";
-  --typing-many: " are idiots.";
+  --typing-one: " is getting brutally corrected 😭😭💢...";
+  --typing-many: " are getting brutally corrected 😭😭💢...";
   --typing-and: " and ";
   --typing-comma: ", ";
-  --typing-several: "Several people are idiots.";
+  --typing-several: "Several bratty kids are getting brutally corrected 😭😭💢...";
  
   /*server folders*/
   --folder-fade: 0.25s;
@@ -212,7 +210,7 @@
     0 -0.5px 0 rgb(0 0 0 / 0.05),
     0 -1px 0 rgb(0 0 0 / 0.025),
     0 -1.5px 0 rgb(0 0 0 / 0.025);
-  --modal-glow: 0 0 1000px rgb(0 0 0);
+  --modal-glow: 0 0 0 100vmax rgb(0 0 0 / 0.08);
  
   /* member list statuses*/
   --status-margin: 5px;
@@ -448,10 +446,9 @@ section[class*="panels_"] {
   box-shadow: var(--glass-shadow) !important;
 }
 
-.autocomplete__13533.outerWrapper_d1405b {
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation)) !important;
+.autocomplete__13533 {
+  backdrop-filter: none !important;
 }
-
 .autocomplete__13533.autocomplete__6b0e0.autocompleteAttached__6b0e0 {
   max-height: var(--menu-max-height) !important;
   max-width: var(--menu-max-width) !important;
@@ -906,7 +903,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
     order: 2;
   }
  
-  > span:has([class*="chipletContainerInner_"]) {
+  > span:has(.chipletContainerInner__10651) {
     order: 3;
   }
  
@@ -1296,12 +1293,11 @@ form[class*="form"]:has([class*="channelTextArea"]),
 /*d. sudo layer*/
 :not(.contentWrapper__08434) > #emoji-picker-tab-panel::before,
 :not(.contentWrapper__08434) > #emoji-picker-tab-panel::after,
-.rootWithShadow__49fc1:not(:has(> .quickswitcher_ac6cb0))::before,
+.rootWithShadow__49fc1:not(:has(> :is(.quickswitcher_ac6cb0, [class*="reactorsContainer_"])))::before,
 #guild-header-popout::before,
 #guild-header-popout::after,
 [class*="layerContainer_"] .outer_c0bea0:not(.user-profile-modal):not(.profileCustomizationSection__44061 *) .inner_c0bea0::before,
 [class*="layerContainer_"] .outer_c0bea0:not(.profileCustomizationSection__44061 *):not(.sidebarContainer__656be *)::before,
-.modal__67dba::before,
 .modal__67dba::after,
 .submenuPaddingContainer_c1e9c4::before,
 #guild-context::before,
@@ -1309,7 +1305,6 @@ form[class*="form"]:has([class*="channelTextArea"]),
 #channel-attach::after,
 #friend-row::after,
 [role="menu"][id]:not(#account):not(#guild-context):not(#guild-header-popout)::after,
-.root__49fc1:has(> div > [class*="connectionsContainer_"])::before,
 .root__49fc1:has(> div > [class*="connectionsContainer_"])::after,
 .overlay_c0bea0::before,
 .bar__7aaec::before,
@@ -1318,8 +1313,6 @@ form[class*="form"]:has([class*="channelTextArea"]),
 .menu_c1e9c4:not(#guild-context):not(#sort-and-view).flexible_c1e9c4:first-child::before,
 .submenu_c1e9c4.menu_c1e9c4::before,
 .contentWrapper__08434::before,
-[class*="layer_"]:has(.container__4e30a)::before,
-.focusLock__49fc1 > [class*="modal_"]::after,
 [aria-labelledby] > .root__49fc1:not(:has(> [aria-labelledby]))::after,
 .rootWithShadow__49fc1:has(> [class*="reactorsContainer_"])::after,
 .root__49fc1:has(> [id])::after,
@@ -1328,11 +1321,6 @@ form[class*="form"]:has([class*="channelTextArea"]),
 .languageSelector__4d95d::after,
 .root__49fc1:has(> div > div > form > .header__49fc1)::after,
 .vc-notification::after,
-[class*="messagesPopoutWrap_"]::before,
-[class*="uploadModal_"]::after,
-[class*="recentMentionsPopout_"]::after,
-[class*="customColorPicker_"]::after,
-[class*="guildPopout_"]::after,
 [class*="toast_"]::after,
 .popout__76f04::after,
 .picker__09f65::before,
@@ -1341,7 +1329,6 @@ form[class*="form"]:has([class*="channelTextArea"]),
 .container__9fa5a::after,
 .wrapper_f7ecac::before,
 .autocomplete__13533::before,
-[class*="streamPreview_"]::before,
 [class*="messageGroupWrapper_"]::before,
 [class*="reactionTooltip_"]::after,
 .footer__67dba::before,
@@ -1356,16 +1343,14 @@ form[class*="form"]:has([class*="channelTextArea"]),
  
 /*e. sublayers*/
 :not(.contentWrapper__08434) > #emoji-picker-tab-panel::before,
-.rootWithShadow__49fc1:not(:has(> .quickswitcher_ac6cb0))::before,
+.rootWithShadow__49fc1:not(:has(> :is(.quickswitcher_ac6cb0, [class*="reactorsContainer_"])))::before,
 #guild-header-popout::before,
 [class*="layerContainer_"] .outer_c0bea0:not(.user-profile-modal):not(.profileCustomizationSection__44061 *) .inner_c0bea0::before,
-.modal__67dba::before,
 .submenuPaddingContainer_c1e9c4::before,
 #guild-context::before,
 #channel-attach::after,
 #friend-row::after,
-[role="menu"][id]:not(#account):not(#guild-context):not(#guild-header-popout)::after,
-.root__49fc1:has(> div > [class*="connectionsContainer_"])::before {
+[role="menu"][id]:not(#account):not(#guild-context):not(#guild-header-popout)::after {
   background: transparent;
   backdrop-filter: blur(var(--blur-popup));
 }
@@ -1382,7 +1367,15 @@ form[class*="form"]:has([class*="channelTextArea"]),
 .contentWrapper__08434::before,
 :not(.contentWrapper__08434) > #emoji-picker-tab-panel::after,
 #guild-context::after,
-[class*="layer_"]:has(.container__4e30a)::before,
+[class*="layer_"]:has(.container__4e30a)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--tint-low);
+  opacity: var(--opacity-popup);
+}
 .focusLock__49fc1 > [class*="modal_"]::after,
 [aria-labelledby] > .root__49fc1:not(:has(> [aria-labelledby]))::after,
 .rootWithShadow__49fc1:has(> [class*="reactorsContainer_"])::after,
@@ -1400,6 +1393,11 @@ form[class*="form"]:has([class*="channelTextArea"]),
 [class*="guildPopout_"]::after,
 .autocomplete__13533::before,
 [class*="streamPreview_"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
   background: var(--tint-low);
   opacity: var(--opacity-popup);
 }
@@ -1576,8 +1574,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
 }
  
 :is([class*="tooltip_"], .popoutContainer__0f481) {
-  --background-floating: rgb(var(--acrylic-tone) / var(--opacity-popup));
-  backdrop-filter: blur(var(--blur-popup));
+  --background-floating: rgb(var(--acrylic-tone) / 0.7);
 }
  
 [class*="containerBackground_"] {
@@ -1676,15 +1673,15 @@ form[class*="form"]:has([class*="channelTextArea"]),
 }
  
 /* collapsible threads */
-[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]) {
+.containerDefault_c69b6d[data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]) {
   interpolate-size: allow-keywords;
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--thread-collapse-time) ease;
 }
  
-[class*="containerDefault_"][data-dnd-name]:is(:hover, :focus-within) + [class*="container_"]:has([class*="spineBorder_"]),
-[class*="containerDefault_"][data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]):is(:hover, :focus-within) {
+.containerDefault_c69b6d[data-dnd-name]:is(:hover, :focus-within) + [class*="container_"]:has([class*="spineBorder_"]),
+.containerDefault_c69b6d[data-dnd-name] + [class*="container_"]:has([class*="spineBorder_"], li[class*="container_"]):is(:hover, :focus-within) {
   max-height: max-content;
 }
  
