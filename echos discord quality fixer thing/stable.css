@@ -457,6 +457,7 @@ section[class*="panels_"] {
 }
 
 .autocomplete__13533 {
+  background: transparent !important;
   backdrop-filter: none !important;
 }
 .autocomplete__13533.autocomplete__6b0e0.autocompleteAttached__6b0e0 {
@@ -1086,7 +1087,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
  
   &:hover > .folderPreviewGuildIcon__48112 {
     opacity: 1;
-    filter: blur(0);
+    filter: none;
   }
 }
  
@@ -1226,6 +1227,9 @@ form[class*="form"]:has([class*="channelTextArea"]),
 .scroller__01c8c,
 .voters__01c8c,
 .wrapper__4106a,
+.directoryPanel__6db38,
+.directoryFooter__6db38,
+.detailPanel__6db38,
 [class*="badgeList_"],
 [class*="profileBadges_"],
 [class*="messageGroupWrapper_"],
@@ -1267,7 +1271,6 @@ form[class*="form"]:has([class*="channelTextArea"]),
 .contentWrapper__08434,
 .quickswitcher_ac6cb0,
 .picker__09f65,
-.autocomplete__13533,
 .container__4e30a,
 .focusLock__49fc1 > [class*="modal_"],
 [aria-labelledby] > .root__49fc1:not(:has(> [aria-labelledby])),
@@ -1341,6 +1344,14 @@ form[class*="form"]:has([class*="channelTextArea"]),
 .autocomplete__13533::before,
 [class*="messageGroupWrapper_"]::before,
 [class*="reactionTooltip_"]::after,
+[class*="layer_"]:has(.container__4e30a)::before,
+.focusLock__49fc1 > [class*="modal_"]::after,
+[class*="messagesPopoutWrap_"]::before,
+[class*="uploadModal_"]::after,
+[class*="recentMentionsPopout_"]::after,
+[class*="customColorPicker_"]::after,
+[class*="guildPopout_"]::after,
+[class*="streamPreview_"]::before,
 .footer__67dba::before,
 [class*="tier2_"]::before,
 [class*="tier0_"]::before {
@@ -1377,15 +1388,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
 .contentWrapper__08434::before,
 :not(.contentWrapper__08434) > #emoji-picker-tab-panel::after,
 #guild-context::after,
-[class*="layer_"]:has(.container__4e30a)::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  background: var(--tint-low);
-  opacity: var(--opacity-popup);
-}
+[class*="layer_"]:has(.container__4e30a)::before,
 .focusLock__49fc1 > [class*="modal_"]::after,
 [aria-labelledby] > .root__49fc1:not(:has(> [aria-labelledby]))::after,
 .rootWithShadow__49fc1:has(> [class*="reactorsContainer_"])::after,
@@ -1403,11 +1406,6 @@ form[class*="form"]:has([class*="channelTextArea"]),
 [class*="guildPopout_"]::after,
 .autocomplete__13533::before,
 [class*="streamPreview_"]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
   background: var(--tint-low);
   opacity: var(--opacity-popup);
 }
@@ -1466,8 +1464,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
   overflow: visible;
 }
  
-.root__49fc1::after,
-.root__49fc1::before {
+.root__49fc1::after {
   border-radius: inherit;
 }
  
@@ -1548,6 +1545,7 @@ form[class*="form"]:has([class*="channelTextArea"]),
 /*theme compat */
 .theme-light,
 .theme-dark {
+  --search-popout-option-non-text-color: rgb(var(--acrylic-ink) / var(--opacity-text-muted));
   --modal-background: transparent;
   --modal-footer-background: transparent;
   --tint-low: var(--pop-up-color, var(--bg-overlay-3, var(--background-base-low, var(--background-secondary))));
@@ -1572,7 +1570,6 @@ form[class*="form"]:has([class*="channelTextArea"]),
  
 .theme-light,
 .theme-dark {
-  --search-popout-option-non-text-color: rgb(var(--acrylic-ink) / var(--opacity-text-muted));
 }
  
 :is(
@@ -1620,9 +1617,10 @@ form[class*="form"]:has([class*="channelTextArea"]),
   display: none;
 }
  
-/*some bullshit orbs menu they added last week */
+/*some bullshit orbs menu and badge directory they added last week */
 .orbWalletContainer__81c60,
-.container__8a031[class*="size-"] {
+.container__8a031[class*="size-"],
+.modalRoot__6db38 {
   background: color-mix(in srgb, var(--tint-low) calc(var(--opacity-popup) * 100%), transparent) !important;
   backdrop-filter: blur(var(--blur-popup));
 }
