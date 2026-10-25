@@ -167,7 +167,7 @@
   );
 
   /*dm buttons*/
-  --dm-btn-time: 0.3s;
+  --dm-btn-time: 0.15s;
   --dm-btn-hover-opacity: 0.7;
 
   /*compact tabs*/
@@ -252,6 +252,24 @@
 /* remove the annoying links near the version numbers in settings modal*/
 [class^="links_"]:has(> a[href*="/privacy"]) {
   display: none;
+}
+
+/* better openasar menu opening button*/
+#openasar-ver {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: var(--item-border-radius);
+  background-color: var(--dm-btn-idle);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--dm-btn-time),
+    opacity var(--dm-btn-time);
+
+  &:hover {
+    background-color: var(--dm-btn-hover);
+    opacity: var(--dm-btn-hover-opacity);
+  }
 }
 
 /*titlebar*/
