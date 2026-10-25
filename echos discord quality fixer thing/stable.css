@@ -249,6 +249,11 @@
 }
 /*end of config*/
 
+/* remove the annoying links near the version numbers in settings modal*/
+[class^="links_"]:has(> a[href*="/privacy"]) {
+  display: none;
+}
+
 /*titlebar*/
 :is([class^="title_"], [class*=" title_"]) > :is([class^="title_"], [class*=" title_"]) {
   display: none !important;
