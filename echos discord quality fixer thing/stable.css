@@ -1,6 +1,6 @@
 /* config */
 :root {
-  /* userbar */
+  /*userbar*/
   --userbar-peek: 132.4px;
   --userbar-edge: 90px;
   --userbar-hide-delay: 0.155s;
@@ -8,7 +8,7 @@
   --userbar-show-time: 0.155s;
   --userbar-list-gap: calc(var(--userbar-peek) - var(--userbar-edge) + 5.6px);
 
-  /* glass */
+  /* glass*/
   --blur-popup: 8px;
   --blur-bar: 8px;
   --radius-popup: 10px;
@@ -36,34 +36,34 @@
   --tier-opacity: 0.24;
   --profile-gradient-strength: 30%;
 
-  /* colors */
+  /*colors*/
   --folder-cover-color: #ffaac9;
-  --accent: #9a6377;
+  --accent: #78324c97;
   --offline-toast-idle: white;
   --offline-toast-alert: #df3d40;
   --dm-btn-idle: rgb(54 16 29 / 0.349);
   --dm-btn-hover: rgb(117 68 84);
 
-  /* misc */
+  /*misc*/
   --spoiler-blur-hover: 8px;
   --message-radius: 0;
   --message-hover-shift: 5px;
   --hover-highlight-strength: 55%;
 
-  /* channel list highlight */
-  --chs-color-1: hsla(336, 83%, 71%, 0.38);
-  --chs-color-2: hsla(343, 67%, 30%, 0.387);
+  /*channel list highlight*/
+  --chs-color-1: hsla(336, 50%, 39%, 0.284);
+  --chs-color-2: hsla(343, 74%, 22%, 0.298);
   --chs-channel-selected: linear-gradient(40deg, var(--chs-color-1) 30%, var(--chs-color-2));
   --chs-selected-radius: 8px;
   --chs-selected-offset: 5px;
-  --chs-icon-hover: rgba(254, 117, 165, 0.675);
+  --chs-icon-hover: rgba(239, 98, 147, 0.647);
   --chs-icon-scale: 0.9;
   --chs-channel-spacing: 1px;
   --chs-channel-size: 1px;
   --chs-category-pad: 8px;
   --chs-collapsed-opacity: 0.5;
 
-  /* highlight fades */
+  /* highlight fades*/
   --server-highlight-fade-in: 0.25s;
   --server-highlight-fade-out: 0.25s;
   --server-dim-opacity: 0.5;
@@ -108,76 +108,82 @@
   --menu-accent-width: 3px;
   --menu-secondary-gap: 10px;
   --scrollbar-padding: 0 6px;
-
   --glass-bg-color: rgb(50 29 35 / 0.904);
   --glass-border: 1px solid rgb(62 20 35 / 0.1);
   --glass-shadow: 0 8px 32px rgb(0 0 0 / 0.3), 0 0 0 1px rgb(255 255 255 / 0.05);
-
   --item-bg: rgb(255 255 255 / 0.03);
   --item-border-radius: 4px;
   --item-transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
     transform 0.2s ease;
-
   --hover-bg: rgb(100 100 100 / 0.25);
   --hover-border-color: rgb(150 150 150 / 0.3);
   --hover-shadow: 0 2px 8px rgb(50 50 50 / 0.15);
   --hover-transform: translateX(2px);
-
   --selected-bg: rgb(80 80 80 / 0.3);
   --selected-border-color: rgb(100 100 100 / 0.8);
   --selected-shadow: inset 0 0 10px rgb(50 50 50 / 0.2);
-
   --category-bg-color: transparent;
 
-  /* search bar */
+  /* search bar*/
   --search-collapsed-width: 32px;
   --search-open-width: 244px;
   --search-time: 0.25s;
   --search-icon-gap: 7px;
 
-  /* gif bar */
+  /*gif bar*/
   --gif-bar-height: 90%;
   --gif-drawer-top: 12rem;
   --gif-drawer-offset: 11.5rem;
 
-  /* image spoilers */
+  /*image spoilers */
   --spoiler-blur: 44px;
   --spoiler-blur-time: 80ms;
   --spoiler-warning-time: 50ms;
   --spoiler-warning-hover-opacity: 0.2;
 
-  /* embeds */
+  /*embeds*/
   --embed-tint-opacity: 0.35;
 
-  /* messages */
+  /* essages*/
   --message-shift-time: 0.17s;
 
-  /* translucent chatbar */
+  /*translucent chatbar*/
   --chatbar-overlap: 51vh;
   --chatbar-spacer: calc(var(--chatbar-overlap) - 1vh);
   --chatbar-jump-offset: calc(var(--chatbar-overlap) + 1vh);
   --chatbar-scrollbar-end: 35%;
+    /*split color thing*/
+  --split-color-1: var(--chs-color-1);
+  --split-color-2: var(--chs-color-2);
+  --split-strength: 30%;
+  --split-angle: 115deg;
+  --split-point: 38%;
+  --tm-glass-split: linear-gradient(
+    var(--split-angle),
+    color-mix(in srgb, var(--split-color-1) var(--split-strength), transparent) var(--split-point),
+    color-mix(in srgb, var(--split-color-2) var(--split-strength), transparent) calc(var(--split-point) + 0.4%)
+  );
 
-  /* dm buttons */
+  /*dm buttons*/
   --dm-btn-time: 0.3s;
   --dm-btn-hover-opacity: 0.7;
 
-  /* compact tabs */
+  /*compact tabs*/
   --tab-badge-scale: 0.7;
   --tab-gap: 4px;
   --tab-pad: 6px;
   --tab-badge-left: 17.5px;
 
-  /* compact server tabs */
+  /*compact server tabs*/
   --sidebar-width: 240px;
   --server-tab-pad: 5px;
   --tab-progress-inset: 25px;
   --tab-progress-margin: 0 5px;
   --tab-divider-margin: 15px 15px 3px;
 
-  /* server tags */
+  /* server tags*/
   --tag-time: 0.5s;
   --tag-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
   --tag-icon-gap: 0.6ch;
@@ -188,7 +194,7 @@
   --tag-overlay-radius: 6px;
   --tag-max-width: 4em;
 
-  /* typing status */
+  /* typing status*/
   --typing-size: 12px;
   --typing-height: 16px;
   --typing-one: " is getting brutally corrected 😭😭💢...";
@@ -197,20 +203,20 @@
   --typing-comma: ", ";
   --typing-several: "Several bratty kids are getting brutally corrected 😭😭💢...";
 
-  /* server folders */
+  /* server folders*/
   --folder-fade: 0.25s;
   --folder-blur: 2.25px;
   --folder-dim-opacity: 0.5;
   --folder-cover-top: 60px;
   --folder-cover-right: 12px;
 
-  /* profiles */
+  /* profiles*/
   --z-profile-body: 9999;
   --profile-border-width: 4px;
   --profile-radius-offset: 1px;
   --radius-banner-inset: 6px;
 
-  /* geometry */
+  /*geometry*/
   --submenu-inset: 8px;
   --submenu-layer-inset: 16px;
   --footer-shadow:
@@ -219,36 +225,36 @@
     0 -1.5px 0 rgb(0 0 0 / 0.025);
   --modal-glow: 0 0 0 100vmax rgb(0 0 0 / 0.08);
 
-  /* member list statuses */
+  /*member list status*/
   --status-margin: 5px;
   --status-pad: 5px;
   --status-font-size: 105%;
   --status-info-width: 90%;
 
-  /* collapsible threads */
+  /*collapsible threads*/
   --thread-collapse-time: 0.18s;
 
-  /* selection + scrollbar */
+  /*text selection and scrollbar*/
   --selection-strength: 60%;
   --scrollbar-strength: 55%;
 
-  /* captcha */
+  /* captcha thing*/
   --captcha-radius: 10px;
   --captcha-filter:
     invert(1) hue-rotate(180deg) brightness(1.3) hue-rotate(230deg) saturate(1.4) contrast(1.1);
 
-  /* edited label */
+  /* edited label*/
   --edited-label: "✎ edited ";
   --edited-width: 26ch;
 }
-/* end of config */
+/*end of config*/
 
-/* titlebar */
+/*titlebar*/
 :is([class^="title_"], [class*=" title_"]) > :is([class^="title_"], [class*=" title_"]) {
   display: none !important;
 }
 
-/* userbar */
+/*userbar*/
 section[class*="panels_"] {
   transform: translateY(calc(100% + var(--userbar-edge) - var(--userbar-peek)));
   transition: transform var(--userbar-hide-time) ease var(--userbar-hide-delay);
@@ -270,7 +276,7 @@ section[class*="panels_"] {
   mask-image: linear-gradient(to bottom, #000 calc(100% - var(--list-fade-size)), rgb(0 0 0 / var(--list-fade-end)));
 }
 
-/* quests */
+/*quests*/
 .container__60f82 > div:not(:has(.expirationCopy_b5b7aa)) {
   display: none;
 }
@@ -298,7 +304,7 @@ section[class*="panels_"] {
   }
 }
 
-/* offline toast */
+/* offline toast*/
 .container_a2f514 {
   background: var(--toast-bg);
   inset: var(--toast-top) var(--toast-right) auto auto !important;
@@ -321,7 +327,7 @@ section[class*="panels_"] {
   padding-bottom: var(--toast-pad-bottom);
 }
 
-/* message hover fade */
+/*message hover fade*/
 .message__5126c,
 .searchResult__80bf8 {
   transition: background-color var(--message-highlight-fade-out) ease;
@@ -338,7 +344,7 @@ section[class*="panels_"] {
   transition: background-color var(--message-highlight-fade-in) ease;
 }
 
-/* role color */
+/*role color*/
 .messageContent_c19a55,
 .compact_c19a55 .contents_c19a55 {
   position: static !important;
@@ -410,7 +416,7 @@ section[class*="panels_"] {
   }
 }
 
-/* compact roles */
+/*compact roles*/
 .vc-permviewer-role-button {
   padding: var(--permviewer-pad);
 }
@@ -454,7 +460,7 @@ section[class*="panels_"] {
   }
 }
 
-/* compact autocomplete */
+/* compact autocomplete*/
 .autocompleteInner__13533.autocompleteInner__6b0e0,
 .autocomplete__13533.outerWrapper_d1405b {
   max-height: var(--menu-max-height) !important;
@@ -524,7 +530,7 @@ section[class*="panels_"] {
   margin-right: var(--menu-secondary-gap);
 }
 
-/* compact search bar */
+/* compact search bar*/
 .search_c322aa > .searchBar_c322aa {
   width: var(--search-collapsed-width) !important;
   background: none;
@@ -554,7 +560,7 @@ section[class*="panels_"] {
   width: auto !important;
 }
 
-/* full sized gif bar */
+/* full sized gif bar*/
 [class*="layerContainer_"] [class*="positionLayer_"] {
   height: var(--gif-bar-height) !important;
 
@@ -564,7 +570,7 @@ section[class*="panels_"] {
   }
 }
 
-/* image spoilers */
+/* image spoilers*/
 [class*="attachmentContainer_"][class*="spoilerContent_"] {
   background-color: transparent;
 
@@ -594,7 +600,7 @@ section[class*="panels_"] {
   }
 }
 
-/* colored webhook and embeds */
+/* colored webhook and embeds*/
 .embedFull__623de {
   overflow: hidden;
 
@@ -650,7 +656,7 @@ section[class*="panels_"] {
   }
 }
 
-/* compact button thing*/
+/* compact dm buttons and server tabs*/
 .scroller__99e7c[data-list-id^="private-channels-uid_"] > .content_d125d2,
 .scroller__629e4 > .content_d125d2,
 [data-list-id="channels"] > .content_d125d2,
@@ -663,7 +669,7 @@ section[class*="panels_"] {
   justify-content: space-evenly;
 }
 
-/* compact dm buttons */
+    /* compact dm buttons */
 .scroller__99e7c[data-list-id^="private-channels-uid_"] > .content_d125d2 {
   > div:not([class]):first-child,
   > div[role="button"],
@@ -748,15 +754,15 @@ section[class*="panels_"] {
   }
 }
 
-/* compact server tabs */
+    /* compact server tabs */
 .scroller__629e4 > .content_d125d2,
 [data-list-id="channels"] > .content_d125d2,
 .content_d125d2[data-list-id="channels"] {
-  /* banner no banner */
+  /* banner / no banner */
   > :is(div[style="height: 84px;"], div[style="height: 0px;"]):not([class]) {
     width: 100%;
 
-  /* compact default */
+  /* compact / default */
     + :is(div[style="height: 8px;"], div[style="height: 12px;"]):not([class]) {
       width: 100%;
 
@@ -770,7 +776,7 @@ section[class*="panels_"] {
     }
   }
 
-  /* get started*/
+  /* get started */
   > li:not([class]):has(> .progressBarContainer_baf530) {
     width: 100%;
 
@@ -791,7 +797,7 @@ section[class*="panels_"] {
     width: fit-content;
   }
 
-  /* channel regular grouped game shop */
+  /*channel regular grouped game shop*/
   > li:not([class]) > .wrapper__2ea32,
   > div:not([class]) > li:not([class]) > .wrapper__2ea32,
   > .wrapper_fce7ca > li > .wrapper__2ea32 {
@@ -829,7 +835,7 @@ section[class*="panels_"] {
     }
   }
 
-  /* category channel thread */
+  /* category channel thread*/
   > .containerDefault__29444,
   > .containerDefault_c69b6d,
   > .container__5b40b {
@@ -838,7 +844,7 @@ section[class*="panels_"] {
   }
 }
 
-/* channel list highlight */
+/* channel list highlight*/
 .containerDefault_c69b6d.selected_c69b6d .link__2ea32 {
   background: var(--chs-channel-selected);
   border-radius: var(--chs-selected-radius);
@@ -872,7 +878,7 @@ section[class*="panels_"] {
   opacity: var(--chs-collapsed-opacity) !important;
 }
 
-/* swap server and role icon */
+/* swap server and role icon*/
 [class*="headerText_"] {
   display: inline-flex;
 
@@ -901,7 +907,7 @@ section[class*="panels_"] {
   }
 }
 
-/* minimized server tags */
+/* minimized server tags*/
 .chipletContainerInner__10651 {
   background: transparent !important;
   padding: 0;
@@ -944,7 +950,7 @@ section[class*="panels_"] {
   }
 }
 
-/* expand collapse loop fix */
+/* expand collapse loop fix*/
 [class*="layerContainer_"] .chipletContainerInner__10651 {
   position: relative;
 
@@ -976,7 +982,7 @@ section[class*="panels_"] {
   border: none;
 }
 
-/* trim server tags */
+/* trim server tags*/
 [class*="clanTag"] > span > span {
   display: -webkit-inline-box;
   -webkit-box-orient: vertical;
@@ -1147,7 +1153,7 @@ section[class*="panels_"] {
   box-shadow: var(--tm-glass-edge);
 }
 
-/* strip original backgrounds */
+/* strip original backgrounds*/
 .body__6fa2e,
 .header__8ef02,
 .container_fed6d3,
@@ -1215,7 +1221,7 @@ section[class*="panels_"] {
   background-image: var(--custom-premium-colors-premium-gradient-tier-0);
 }
 
-/* blur elememnt only */
+/*blur element only*/
 .overlay_c0bea0,
 .mediaMosaicAltTextPopout__0f481,
 .colorwaySelectorModal,
@@ -1262,7 +1268,7 @@ section[class*="panels_"] {
   backdrop-filter: blur(var(--blur-bar));
 }
 
-/* fill host*/
+/* fill*/
 .overlay_c0bea0::before,
 .bar__7aaec::before,
 .quickswitcher_ac6cb0::after,
@@ -1309,7 +1315,7 @@ section[class*="panels_"] {
   box-shadow: var(--tm-glass-edge);
 }
 
-/*sudo only blur*/
+/* blur pseudo only */
 :not(.contentWrapper__08434) > #emoji-picker-tab-panel::before,
 .rootWithShadow__49fc1:not(:has(> :is(.quickswitcher_ac6cb0, [class*="reactorsContainer_"])))::before,
 #guild-header-popout::before,
@@ -1325,7 +1331,7 @@ section[class*="panels_"] {
   backdrop-filter: blur(var(--blur-popup));
 }
 
-/* blur only adn edge drawn over the tint */
+/* blur only and edge drawn over tint*/
 #channel-attach::after,
 #friend-row::after,
 [role="menu"][id]:not(#account):not(#guild-context):not(#guild-header-popout)::after {
@@ -1519,7 +1525,7 @@ section[class*="panels_"] {
   backdrop-filter: blur(var(--blur-popup));
 }
 
-/* kil the active now panel */
+/* kil active now */
 .nowPlayingColumn__133bf {
   display: none;
 }
@@ -1560,7 +1566,7 @@ section[class*="panels_"] {
   }
 }
 
-/* scrollbar + text selection accent */
+/* scrollbar + text selection */
 ::-webkit-scrollbar-track {
   visibility: hidden;
   background: transparent;
@@ -1587,7 +1593,7 @@ section[class*="panels_"] {
   max-height: max-content;
 }
 
-/* censor acc details*/
+/*hide acc details fully thing*/
 :is(
   [data-nav-anchor-key="account_info_email_setting"],
   [data-nav-anchor-key="account_info_phone_setting"]
@@ -1595,13 +1601,13 @@ section[class*="panels_"] {
   -webkit-text-security: disc;
 }
 
-/*prevent capchta from bark fark flashing you */
+/*catpcha anto flashbang*/
 .captchaContainer_deee3a iframe {
   filter: var(--captcha-filter) !important;
   border-radius: var(--captcha-radius);
 }
 
-/*prettified edit timestamp */
+/* prettified edit timestamp */
 .messageContent_c19a55 > .timestamp_c19a55 {
   > span > time > .edited_c19a55 {
     width: var(--edited-width);
@@ -1623,7 +1629,7 @@ section[class*="panels_"] {
   }
 }
 
-/*glass chatbar */
+/* glass chatbar*/
 form.formWithLoadedChatInput_f75fb0 {
   margin-top: calc(var(--chatbar-overlap) * -1);
 }
@@ -1651,7 +1657,7 @@ div.channelTextArea_f75fb0 {
     border-radius: inherit;
     pointer-events: none;
     border: 1.25px solid var(--tm-glass-border);
-    background: var(--tm-glass-fill);
+    background: var(--tm-glass-split), var(--tm-glass-fill);
     box-shadow: var(--tm-glass-sheen), 0 8px 24px var(--tm-glass-shadow);
     backdrop-filter: blur(var(--blur-bar));
     transition:
