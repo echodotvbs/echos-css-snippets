@@ -1,0 +1,23 @@
+/*openasar button for settings modal footer*/
+
+#openasar-ver {
+  --oaidle: rgba(70, 70, 70, 0.75);
+  --oahover: rgba(96, 108, 247, 0.75);
+  --oafade: 0.7;
+  --oatime: 0.15s;
+  --oaradius: 4px;
+  --oapad: 6px 8px;
+
+  display: inline-block;
+  padding: var(--oapad);
+  border-radius: var(--oaradius);
+  background-color: var(--oaidle);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--oatime), opacity var(--oatime);
+
+  &:hover {
+    background-color: var(--oahover);
+    opacity: var(--oafade);
+  }
+}
