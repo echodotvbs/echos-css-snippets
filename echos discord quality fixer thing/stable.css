@@ -48,10 +48,10 @@
   --spoiler-blur-hover: 8px;
   --message-radius: 0;
   --message-hover-shift: 5px;
-  --hover-highlight-strength: 25%;
+  --hover-highlight-strength: 50%;
 
   /*channel list highlight*/
-  --chs-color-1: hsla(336, 50%, 39%, 0.284);
+  --chs-color-1: hsla(336, 53%, 42%, 0.284);
   --chs-color-2: hsla(343, 74%, 22%, 0.298);
   --chs-channel-selected: linear-gradient(40deg, var(--chs-color-1) 30%, var(--chs-color-2));
   --chs-selected-radius: 8px;
