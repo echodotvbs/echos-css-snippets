@@ -1,12 +1,5 @@
 /* config */
 :root {
-  /*userbar*/
-  --userbar-peek: 132.4px;
-  --userbar-edge: 90px;
-  --userbar-hide-delay: 0.155s;
-  --userbar-hide-time: 0.145s;
-  --userbar-show-time: 0.155s;
-  --userbar-list-gap: calc(var(--userbar-peek) - var(--userbar-edge) + 5.6px);
 
   /* glass*/
   --blur-popup: 8px;
@@ -276,27 +269,6 @@
   display: none !important;
 }
 
-/*userbar*/
-section[class*="panels_"] {
-  transform: translateY(calc(100% + var(--userbar-edge) - var(--userbar-peek)));
-  transition: transform var(--userbar-hide-time) ease var(--userbar-hide-delay);
-
-  &:hover {
-    transform: translateY(0);
-    transition: transform var(--userbar-show-time) ease;
-  }
-}
-
-.guilds__5e434,
-.scroller__99e7c[data-list-id^="private-channels-uid_"] {
-  margin-bottom: var(--userbar-list-gap) !important;
-}
-
-.scroller__99e7c[data-list-id^="private-channels-uid_"],
-.scroller__629e4,
-[data-list-id="channels"]:not(.content_d125d2) {
-  mask-image: linear-gradient(to bottom, #000 calc(100% - var(--list-fade-size)), rgb(0 0 0 / var(--list-fade-end)));
-}
 
 /*quests*/
 .container__60f82 > div:not(:has(.expirationCopy_b5b7aa)) {
