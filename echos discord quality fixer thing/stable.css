@@ -171,6 +171,7 @@
 
   /*compact server tabs*/
   --sidebar-width: 240px;
+  --sidebar-width-narrow: 200px;
   --server-tab-pad: 5px;
   --tab-progress-inset: 25px;
   --tab-progress-margin: 0 5px;
@@ -1736,5 +1737,27 @@ div.wrapper__44df5 {
 .scroller__36d07 {
   &::-webkit-scrollbar-button:end:increment {
     height: var(--chatbar-scrollbar-end);
+  }
+}
+
+/* small window layout*/
+@media (max-width: 1100px) {
+  :root {
+    --sidebar-width: var(--sidebar-width-narrow);
+  }
+
+  [class*="sidebar_"] {
+    width: var(--sidebar-width);
+
+    .vc-typing-indicator,
+    .vc-channelemojis-emoji,
+    [class*="guildIconV2Container_"],
+    [class*="containerDefault_"] [role="img"] {
+      display: none;
+    }
+  }
+
+  [class*="chat_"] [class*="membersWrap_"] {
+    display: none;
   }
 }
