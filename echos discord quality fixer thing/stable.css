@@ -1592,7 +1592,7 @@
 :is(
   [data-nav-anchor-key="account_info_email_setting"],
   [data-nav-anchor-key="account_info_phone_setting"]
-):has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="text-md/medium"] {
+):has(button[data-mana-component="text-button"]:not([aria-label^="Hide"])) [class*="stack_"] > div[class*="body-md/medium"] {
   -webkit-text-security: disc;
 }
 
