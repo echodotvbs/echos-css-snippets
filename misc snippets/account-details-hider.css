@@ -1,7 +1,6 @@
 /*Account Details Hider
 bro read title (though the hide and reveal buttons work on this one unlike every other snippet)*/
 
-/* account details hider */
 :root {
   --account-hider: on; /* on or off */
 }
