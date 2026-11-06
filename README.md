@@ -1,5 +1,7 @@
 # Echos CSS Snippets
 
+# CURRENTLY BROKEN DUE TO DISCORD CSS OVERHAUL ON 11/7/2026
+
 ## About
 bunch of css snippets i made for [equicord](https://github.com/Equicord/Equicord)
 
