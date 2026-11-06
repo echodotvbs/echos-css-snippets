@@ -28,7 +28,7 @@ settings are located in root (top), labelled config `latest.css`,
 ## Notes
 - some features depend on Discords css class names/hashes and may break after updates. if [this](https://syndishanx.github.io/Website/Update_Classes.html) doesn't help, I'll try to fix it ASAP
 - some settings may need other snippets or plugins to work as intended
-- NoProfileThemes is recommended for the Discord quality fixer snippet: https://github.com/echodotvbs/Remicord/tree/main/src/plugins/noProfileThemes
-- if something breaks, disable the related section
+- [NoProfileThemes](https://equicord.org/plugins/NoProfileThemes) plugin is recommended for the Discord quality fixer snippet
+- if something breaks, comment out the related section and please let me know
 
 also i love Remielle <3
