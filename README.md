@@ -1,12 +1,32 @@
-hi pls like my css i started learning like two days ago
+# Echos CSS Snippets
 
-# If you use my discord quality fixer snippet, its recommended to use the NoProfileThemes plugin by Vencord
+## About
+bunch of css snippets i made for [equicord](https://github.com/Equicord/Equicord)
 
-https://github.com/echodotvbs/Remicord/tree/main/src/plugins/noProfileThemes
+## Files
+| File | Desc |
+| --- | --- |
+| [`latest.css`](latest.css) | main css script |
 
-<img width="339" height="95" alt="image" src="https://github.com/user-attachments/assets/d68af971-a951-4563-9541-40e55d7046a7" />
+## Overview
+*things this css script is meant to have*
 
+| Category | Meaning |
+| --- | --- |
+| Config | tuneable variables for colors, blur, layout and feature toggles |
+| Acrylic UI | blur, tint, borders and glass effects |
+| Navigation | compact tabs, channel list, server icons and folders |
+| Messages | hover effects, embeds, roles and chatbar |
+| Profiles | profile layout and appearance changes |
+| Menus | autocomplete, search and GIF bar |
+| Misc | quests, offline toast, scrollbar, threads and other tweaks |
 
+settings are located in root (top), labelled config `latest.css`,
 
+## Notes
+- some features depend on Discords css class names/hashes and may break after updates. if [this](https://syndishanx.github.io/Website/Update_Classes.html) doesn't help, I'll try to fix it ASAP
+- some settings may need other snippets or plugins to work as intended
+- NoProfileThemes is recommended for the Discord quality fixer snippet: https://github.com/echodotvbs/Remicord/tree/main/src/plugins/noProfileThemes
+- if something breaks, disable the related section
 
-btw i love Remielle
+also i love Remielle <3
